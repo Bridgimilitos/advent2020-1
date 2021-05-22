@@ -1,3 +1,5 @@
+package one;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -40,7 +42,7 @@ public class Sum2020
     {
         try
         {
-            Sum2020 sum = new Sum2020("./input");
+            Sum2020 sum = new Sum2020("./input1");
             System.out.println("2 entries: " + sum.multiply2020Entries());
             System.out.println("3 entries: " + sum.multiply2020ThreeEntries());
         }

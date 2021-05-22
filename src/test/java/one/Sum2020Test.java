@@ -1,9 +1,11 @@
+package one;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class Sum2020Test
@@ -29,10 +31,10 @@ public class Sum2020Test
         List<Integer> firstTen = List.of(1779, 1737, 1537, 1167, 1804, 1873, 1894, 1446, 1262, 1608);
 
         //act
-        Sum2020 sum2020 = new Sum2020("./input");
+        Sum2020 sum2020 = new Sum2020("./input1");
 
         //assert
-        assertArrayEquals(sum2020.getInput().stream()
+        Assert.assertArrayEquals(sum2020.getInput().stream()
             .mapToInt(i -> i).limit(10).toArray(), firstTen.stream().mapToInt(i->i).toArray());
     }
 

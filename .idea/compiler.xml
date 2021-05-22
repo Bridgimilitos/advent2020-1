@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="advent2020-1" />
+        <module name="advent2020" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="advent2020-1" target="11" />
+      <module name="advent2020" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
