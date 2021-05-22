@@ -41,7 +41,8 @@ public class Sum2020
         try
         {
             Sum2020 sum = new Sum2020("./input");
-            System.out.println(sum.multiply2020Entries());
+            System.out.println("2 entries: " + sum.multiply2020Entries());
+            System.out.println("3 entries: " + sum.multiply2020ThreeEntries());
         }
         catch (IOException e)
         {
@@ -52,5 +53,23 @@ public class Sum2020
     public List<Integer> getInput()
     {
         return input;
+    }
+
+    public Long multiply2020ThreeEntries()
+    {
+        for (int i: input)
+        {
+            for (int j: input)
+            {
+                for (int k: input)
+                {
+                    if (i + j + k == 2020)
+                    {
+                        return (long)i * (long)j * (long)k;
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

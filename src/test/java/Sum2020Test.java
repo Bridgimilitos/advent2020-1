@@ -35,4 +35,17 @@ public class Sum2020Test
         assertArrayEquals(sum2020.getInput().stream()
             .mapToInt(i -> i).limit(10).toArray(), firstTen.stream().mapToInt(i->i).toArray());
     }
+
+    @Test
+    public void threeEntriesThatSumTo2020MultiplyToCorrectAnswer()
+    {
+        //arrange
+        List<Integer> input = List.of(1721, 979, 366, 299, 675, 1456);
+
+        //act
+        Sum2020 sum2020 = new Sum2020(input);
+
+        //assert
+        assertEquals((long)sum2020.multiply2020ThreeEntries(), 241861950);
+    }
 }
