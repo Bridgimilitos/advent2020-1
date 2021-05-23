@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PasswordValidatorTest
 {
     @Test
-    public void checkPasswordsMatchPolicy()
+    void checkPasswordsMatchPolicy()
     {
 //        1-3 a: abcde
 //        1-3 b: cdefg
@@ -37,5 +37,23 @@ public class PasswordValidatorTest
     void parseInputFileAndCheckNumberMatch() throws IOException
     {
         assertEquals(2L, PasswordValidator.parseInputFileAndGetCountValid("resource/input2test"));
+    }
+
+    @Test
+    void checkPasswordsMatchPolicyPart2()
+    {
+//        1-3 a: abcde
+//        1-3 b: cdefg
+//        2-9 c: ccccccccc
+        assertAll(
+            () -> assertTrue(PasswordValidator.validPart2(1, 3, 'a', "abcde")),
+            () -> assertFalse(PasswordValidator.validPart2(1, 3, 'b', "cdefg")),
+            () -> assertFalse(PasswordValidator.validPart2(2, 9, 'c', "ccccccccc")));
+    }
+
+    @Test
+    void parseInputFileAndCheckNumberMatchPart2() throws IOException
+    {
+        assertEquals(1L, PasswordValidator.parseInputFileAndGetCountValidPart2("resource/input2test"));
     }
 }
