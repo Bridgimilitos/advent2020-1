@@ -3,7 +3,9 @@ package five;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class BoardingPassParser
 {
@@ -52,6 +54,13 @@ public class BoardingPassParser
             System.out.println(Files.lines(Path.of("resource/input5"))
                                    .mapToInt(BoardingPassParser::parseBoardingPass)
                                    .max().getAsInt());
+
+            List<Integer> seatIds = Files.lines(Path.of("resource/input5"))
+                                        .map(BoardingPassParser::parseBoardingPass).collect(Collectors.toList());
+
+            List<Integer> allSeatIds = IntStream.range(0, 1 << 10).boxed().collect(Collectors.toList());
+            allSeatIds.removeAll(seatIds);
+            System.out.println(allSeatIds);
         }
         catch (IOException e)
         {
